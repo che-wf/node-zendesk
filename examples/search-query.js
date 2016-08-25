@@ -10,7 +10,7 @@ var client = zd.createClient({
 
 var query = "status<solved+requester:user@domain.com+type:ticket";
 
-client.search.query(query, function (err, req, result) {
+client.search.query(escape(query), function (err, req, result) {
   if (err) {
     console.log(err);
     return;
